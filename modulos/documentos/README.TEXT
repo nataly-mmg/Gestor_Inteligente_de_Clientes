@@ -1,0 +1,150 @@
+📋 Gestor Inteligente de Clientes (GIC)
+
+    1. Contexto y situación inicial 📍
+
+Unidad solicitante: Empresa SolutionTech (Startup de tecnología)
+
+La empresa SolutionTech ha identificado la necesidad de modernizar su sistema de gestión de clientes, el cual actualmente se realiza de forma manual. Este método ha generado diversas problemáticas operativas, entre ellas:
+
+- Ineficiencias en la administración de información.
+
+- Duplicación de datos de clientes.
+
+- Riesgos asociados a la falta de validaciones y control de errores.
+
+- Dificultad para escalar el sistema o integrarlo con futuros servicios digitales.
+
+Frente a este escenario, se propone el desarrollo de una plataforma interna de gestión de clientes, implementada en Python, basada en el Paradigma de Programación Orientada a Objetos (POO), que permita estructurar, validar y persistir la información de manera segura, ordenada y escalable.
+
+
+    2. Descripción general del sistema
+
+El Gestor Inteligente de Clientes (GIC) es una aplicación de consola diseñada para uso interno de la empresa, que permite administrar distintos tipos de clientes mediante una estructura modular y orientada a objetos.
+
+El sistema contempla:
+
+- Diferenciación de clientes según su categoría.
+
+- Validaciones de datos de entrada.
+
+- Manejo de errores controlado.
+
+- Registro de actividad del sistema (logs).
+
+- Persistencia de datos mediante archivos de texto.
+
+    
+    3. Objetivo del proyecto
+
+Desarrollar un sistema en Python que permita a SolutionTech:
+
+- Gestionar clientes de forma estructurada y segura.
+
+- Aplicar correctamente los principios de POO.
+
+- Reducir errores humanos asociados al ingreso manual de datos.
+
+- Contar con una base sólida y escalable para futuras integraciones.
+
+
+    4. Tipos de clientes gestionados
+
+
+🔹 Cliente Regular
+
+- Datos: nombre, apellido, email, teléfono.
+
+- Beneficio: 10% de descuento.
+
+- Orientado a clientes individuales sin requisitos adicionales.
+
+
+🔹 Cliente Premium
+
+- Datos: nombre, apellido, RUT personal, email, teléfono, dirección.
+
+- Beneficio: 20% de descuento.
+
+- RUT encapsulado como dato sensible.
+
+
+🔹 Cliente Corporativo
+
+- Datos: nombre, apellido, email, teléfono, empresa, RUT de empresa, dirección.
+
+- Beneficio: 30% de descuento.
+
+- Orientado a clientes empresariales.
+
+
+    5. Funcionalidades principales
+
+- Crear clientes según su tipo.
+
+- Listar clientes de forma ordenada y legible.
+
+- Editar información de clientes existentes.
+
+- Eliminar clientes del sistema.
+
+- Evitar registros duplicados.
+
+- Registrar eventos y errores del sistema.
+
+- Guardar y cargar información desde un archivo .txt.
+
+
+    6. Principios de Programación Orientada a Objetos aplicados
+
+- Encapsulación:
+Uso de atributos privados y propiedades para proteger información sensible (por ejemplo, RUT).
+
+- Herencia:
+Las clases ClienteRegular, ClientePremium y ClienteCorporativo heredan de la clase base Cliente.
+
+- Polimorfismo:
+Cada tipo de cliente redefine el método obtener_descuento() según su beneficio específico.
+
+- Abstracción:
+Validaciones, errores y registro de actividad se separan en módulos independientes.
+
+
+    7. Persistencia de datos
+
+La información de los clientes se almacena en un archivo de texto (base_datos.txt), donde cada línea representa un cliente y su tipo.
+El sistema carga automáticamente los datos al iniciar y guarda los cambios al realizar operaciones de creación, edición o eliminación.
+
+
+8. Registro de actividad (Logs)
+
+El sistema genera un archivo actividad.log que registra:
+
+- Inicio y cierre del sistema.
+
+- Operaciones realizadas por el usuario.
+
+- Errores de validación y errores inesperados.
+
+Esto permite trazabilidad, control y depuración del sistema.
+
+
+    9. Ejecución del sistema
+
+Para ejecutar el sistema, desde la terminal:
+
+python main.py
+
+El usuario interactúa con el sistema mediante un menú en consola, ingresando opciones y datos solicitados.
+
+
+    10. Alcance y proyección
+
+Este proyecto representa una solución realista y escalable para la gestión interna de clientes en una startup tecnológica.
+
+Su diseño modular permite futuras extensiones, como:
+
+- Integración con bases de datos.
+
+- Interfaces gráficas o web.
+
+- Conexión con otros sistemas de la empresa.
