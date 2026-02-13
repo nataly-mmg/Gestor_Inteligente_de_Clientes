@@ -1,8 +1,8 @@
 #___________ importa clase
 
 from modulos.logger import LoggerGIC
-from modulos.validadores import validar_email, validar_telefono, validar_direccion, validar_campo_no_vacio
-from modulos.errores import GICError, DatoInvalidoError 
+from modulos.validadores import Validador
+from modulos.errores import  DatoInvalidoError
 
 log = LoggerGIC()
 ARCHIVO_TXT = "base_datos.txt"
@@ -32,8 +32,13 @@ class Cliente:
     @nombre.setter
     def nombre(self, value):
         value = str(value).strip()
-        if not validar_campo_no_vacio(value):
-            raise ValueError("El nombre no puede estar vacío.")
+
+        if not Validador.validar_campo_no_vacio(value):
+            raise DatoInvalidoError("Nombre obligatorio.")
+    
+        if not Validador.validar_solo_letras(value):
+            raise DatoInvalidoError("Nombre solo puede contener letras.")
+    
         self._nombre = value
 
     # =========================
@@ -43,11 +48,16 @@ class Cliente:
     def apellido(self):
         return self._apellido
 
-    @nombre.setter 
+    @apellido.setter 
     def apellido(self, value):
         value = str(value).strip()
-        if not validar_campo_no_vacio(value):
-            raise ValueError("El apellido no puede estar vacío.")
+
+        if not Validador.validar_campo_no_vacio(value):
+            raise DatoInvalidoError("El apellido no puede estar vacío.")
+        
+        if not Validador.validar_solo_letras(value):
+            raise DatoInvalidoError("El apellido solo puede contener letras.")
+        
         self._apellido = value
 
     # =========================
@@ -60,8 +70,10 @@ class Cliente:
     @email.setter
     def email(self, value):
         value = str(value).strip()
-        if not validar_email(value):
-            raise ValueError(f"El email '{value}' no tiene formato válido.")
+
+        if not Validador.validar_email(value):
+            raise DatoInvalidoError(f"El email no tiene formato válido.")
+        
         self._email = value
 
     # =========================
@@ -74,10 +86,10 @@ class Cliente:
     @telefono.setter
     def telefono(self, value):
         value = str(value).strip()
-        if not validar_telefono(value):
-            raise DatoInvalidoError(
-                f"El teléfono '{value}' debe ser numérico (8-15 dígitos)."
-            )
+
+        if not Validador.validar_telefono(value):
+            raise DatoInvalidoError(f"El teléfono '{value}' debe ser numérico (8-15 dígitos)." )
+        
         self._telefono = value
 
 
@@ -126,7 +138,7 @@ class ClientePremium(Cliente):
     def rut(self, value):
         value = str(value).strip()
         if not value:
-            raise ValueError("El RUT es obligatorio para clientes Premium.")
+            raise DatoInvalidoError("El RUT es obligatorio para clientes Premium.")
         self.__rut = value
 
     # =========================
@@ -138,7 +150,15 @@ class ClientePremium(Cliente):
 
     @direccion.setter
     def direccion(self, value):
-        self._direccion = validar_direccion(value)
+        value = str(value).strip()
+
+        if not Validador.validar_campo_no_vacio(value):
+            raise DatoInvalidoError("La dirección no puede estar vacío.")
+        
+        self._direccion = value
+    
+
+
 
     def obtener_descuento(self):
         return 0.20
@@ -161,8 +181,8 @@ class ClienteCorporativo(Cliente):
     def __init__(self, nombre, apellido, email, telefono, empresa, direccion, rut):
         super().__init__(nombre, apellido, email, telefono)
 
-        if not validar_campo_no_vacio(empresa):
-            raise ValueError("Indicar la empresa (Razón Social) es obligatorio.")
+        if not Validador.validar_campo_no_vacio(empresa):
+            raise DatoInvalidoError("Indicar la empresa (Razón Social) es obligatorio.")
         self.empresa = str(empresa).strip()
 
         self.direccion = direccion
@@ -179,7 +199,7 @@ class ClienteCorporativo(Cliente):
     def rut(self, value):
         value = str(value).strip()
         if not value:
-            raise ValueError("El RUT empresa es obligatorio para clientes corporativos.")
+            raise DatoInvalidoError("El RUT empresa es obligatorio para clientes corporativos.")
         self.__rut = value
 
     # =========================
@@ -191,7 +211,7 @@ class ClienteCorporativo(Cliente):
 
     @direccion.setter
     def direccion(self, value):
-        self._direccion = validar_direccion(value)
+        self._direccion = Validador.validar_campo_no_vacio(value)
 
     def obtener_descuento(self):
         return 0.30
@@ -202,3 +222,70 @@ class ClienteCorporativo(Cliente):
 
     def __str__(self):
         return f"[CORPORATIVO 30% 🏢] {self.empresa} | Contacto: {self.nombre} {self.apellido} | Email: {self.email} | Tel: {self.telefono} | Dir: {self.direccion} | RUT: {self.rut}"
+
+
+
+# ==================================================
+# PERSISTENCIA TXT
+# ==================================================
+
+def guardar_clientes_txt(clientes, ruta=ARCHIVO_TXT):
+    """
+    Guarda una línea por cliente en TXT (separado por '|').
+    """
+    try:
+        with open(ruta, "w", encoding="utf-8") as f:
+            for c in clientes:
+                f.write(c.convertir_a_texto() + "\n")
+
+        log.info(f"Persistencia OK: guardados {len(clientes)} clientes en '{ruta}'")
+
+    except Exception as e:
+        log.error(f"Persistencia ERROR al guardar en '{ruta}': {e}")
+        print("❌ No se pudo guardar el archivo de clientes.-prueba----")
+
+
+def cargar_clientes_txt(ruta=ARCHIVO_TXT):
+    """
+    Carga clientes desde TXT
+    """
+    clientes = []
+    try:
+        with open(ruta, "r", encoding="utf-8") as f:
+            for nro_linea, linea in enumerate(f, start=1):
+                linea = linea.strip()
+                if not linea:
+                    continue
+
+                partes = linea.split("|")
+                tipo = partes[0]
+
+                try:
+                    if tipo == "ClienteRegular":
+                        _, nombre, apellido, email, tel = partes
+                        clientes.append(ClienteRegular(nombre, apellido, email, tel))
+
+                    elif tipo == "ClientePremium":
+                        _, nombre, apellido, rut, email, tel, dirc = partes
+                        clientes.append(ClientePremium(nombre, apellido, rut, email, tel, dirc))
+
+                    elif tipo == "ClienteCorporativo":
+                        _, nombre, apellido, email, tel, empresa, dirc, rut = partes
+                        clientes.append(ClienteCorporativo(nombre, apellido, email, tel, empresa, dirc, rut))
+
+                    else:
+                        log.warning(f"TXT línea {nro_linea}: tipo desconocido '{tipo}' (omitido)")
+
+                except Exception as e:
+                    log.error(f"TXT línea {nro_linea}: error al reconstruir cliente: {e}")
+
+        log.info(f"Persistencia OK: cargados {len(clientes)} clientes desde '{ruta}'")
+        return clientes
+
+    except FileNotFoundError:
+        log.warning(f"Persistencia: no existe '{ruta}', se inicia lista vacía")
+        return []
+
+    except Exception as e:
+        log.error(f"Persistencia ERROR al cargar '{ruta}': {e}")
+        return []

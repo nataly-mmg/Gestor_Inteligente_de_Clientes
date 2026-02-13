@@ -2,6 +2,7 @@
 
 from modulos.gestor_clientes import GestorClientes
 from modulos.logger import LoggerGIC
+from modulos.errores import GICError
 
 
 def main():
@@ -9,11 +10,11 @@ def main():
     log.info("Sistema GIC iniciado")
              
     gestor = GestorClientes()   # usa base_datos.txt por defecto
-    gestor.cargar()             # carga clientes desde TXT (si existe)
+    gestor.cargar()             # carga clientes desde TXT 
 
     while True:
         print("\n" + "=" * 30)
-        print("   GESTOR DE CLIENTES (GIC)")
+        print(" 🖥️  GESTOR DE CLIENTES (GIC)")
         print("=" * 30)
         print("1) Crear cliente")
         print("2) Listar clientes")
@@ -37,6 +38,10 @@ def main():
                 else:
                     print("⚠️ Cliente duplicado.")
 
+            elif op == "2":
+                log.info("Menú | Listar clientes")
+                print("\n--- LISTADO DE CLIENTES ---")
+                gestor.listar_clientes()
 
 
             elif op == "5":
@@ -49,7 +54,7 @@ def main():
                 print("Opción inválida.")
                 log.warning(f"Menú | Opción inválida ingresada: {op}")
 
-        except Exception as e:
+        except GICError as e:
             log.error(f"Error crítico no controlado en main: {e}")
             print(f"❌ Error inesperado: {e}")
 

@@ -1,0 +1,2 @@
+ClienteRegular|Maria|Maria|maria@gmail.com|909876789
+ClienteRegular|Sebastian|martinez|seba@gmail.com|980987432

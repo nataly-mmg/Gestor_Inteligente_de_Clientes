@@ -1,0 +1,133 @@
+2026-02-10 23:09:19.936634 | INFO | Sistema GIC iniciado
+2026-02-10 23:09:19.937540 | WARNING | Persistencia: no existe 'base_datos.txt', se inicia lista vacía
+2026-02-10 23:09:19.937912 | INFO | Clientes cargados: 0
+2026-02-10 23:10:44.939368 | INFO | Persistencia OK: guardados 0 clientes en 'base_datos.txt'
+2026-02-10 23:10:44.939844 | INFO | Clientes guardados en archivo TXT
+2026-02-10 23:10:44.940215 | INFO | Menú | Salir del sistema
+2026-02-10 23:11:03.665387 | INFO | Sistema GIC iniciado
+2026-02-10 23:11:03.666131 | INFO | Persistencia OK: cargados 0 clientes desde 'base_datos.txt'
+2026-02-10 23:11:03.667212 | INFO | Clientes cargados: 0
+2026-02-10 23:11:25.015607 | INFO | Menú | Crear cliente
+2026-02-10 23:11:25.016034 | ERROR | Error crítico no controlado en main: 'GestorClientes' object has no attribute 'crear_cliente_interactivo'
+2026-02-10 23:14:57.785231 | INFO | Sistema GIC iniciado
+2026-02-10 23:14:57.785810 | INFO | Persistencia OK: cargados 0 clientes desde 'base_datos.txt'
+2026-02-10 23:14:57.786152 | INFO | Clientes cargados: 0
+2026-02-10 23:15:07.769691 | INFO | Menú | Crear cliente
+2026-02-10 23:15:07.770219 | ERROR | Error crítico no controlado en main: 'GestorClientes' object has no attribute 'crear_cliente_interactivo'
+2026-02-10 23:18:16.788559 | WARNING | Menú | Opción inválida ingresada: & C:/Python313/python.exe c:/Users/nmart/OneDrive/Escritorio/PYTHON/Gestor_Inteligente_de_Clientes/main.py
+2026-02-10 23:18:22.418108 | WARNING | Menú | Opción inválida ingresada: & C:/Python313/python.exe c:/Users/nmart/OneDrive/Escritorio/PYTHON/Gestor_Inteligente_de_Clientes/main.py
+2026-02-10 23:18:31.170775 | INFO | Menú | Crear cliente
+2026-02-10 23:18:31.171303 | ERROR | Error crítico no controlado en main: 'GestorClientes' object has no attribute 'crear_cliente_interactivo'
+2026-02-11 00:15:19.832792 | WARNING | Menú | Opción inválida ingresada: & C:/Python313/python.exe c:/Users/nmart/OneDrive/Escritorio/PYTHON/Gestor_Inteligente_de_Clientes/main.py
+2026-02-11 00:15:22.546959 | INFO | Persistencia OK: guardados 0 clientes en 'base_datos.txt'
+2026-02-11 00:15:22.547441 | INFO | Clientes guardados en archivo TXT
+2026-02-11 00:15:22.547841 | INFO | Menú | Salir del sistema
+2026-02-11 00:15:31.662141 | INFO | Sistema GIC iniciado
+2026-02-11 00:15:31.662698 | INFO | Persistencia OK: cargados 0 clientes desde 'base_datos.txt'
+2026-02-11 00:15:31.663046 | INFO | Clientes cargados: 0
+2026-02-11 00:15:33.655275 | INFO | Menú | Crear cliente
+2026-02-11 00:16:04.236634 | ERROR | Error crítico no controlado en main: 'GestorClientes' object has no attribute 'es_duplicado'
+2026-02-11 00:16:44.196353 | WARNING | Menú | Opción inválida ingresada: & C:/Python313/python.exe c:/Users/nmart/OneDrive/Escritorio/PYTHON/Gestor_Inteligente_de_Clientes/main.py
+2026-02-11 00:16:46.695953 | INFO | Menú | Crear cliente
+2026-02-11 00:17:15.469036 | WARNING | Fallo al crear cliente: El teléfono '9098' debe ser numérico (8-15 dígitos).
+2026-02-11 00:18:50.635903 | WARNING | Menú | Opción inválida ingresada: & C:/Python313/python.exe c:/Users/nmart/OneDrive/Escritorio/PYTHON/Gestor_Inteligente_de_Clientes/main.py
+2026-02-11 00:18:59.854637 | INFO | Menú | Crear cliente
+2026-02-11 00:19:38.992677 | ERROR | Error crítico no controlado en main: 'GestorClientes' object has no attribute 'es_duplicado'
+2026-02-11 10:03:26.441449 | WARNING | Menú | Opción inválida ingresada: & C:/Python313/python.exe c:/Users/nmart/OneDrive/Escritorio/PYTHON/Gestor_Inteligente_de_Clientes/main.py
+2026-02-11 10:03:35.622001 | INFO | Persistencia OK: guardados 0 clientes en 'base_datos.txt'
+2026-02-11 10:03:35.622438 | INFO | Clientes guardados en archivo TXT
+2026-02-11 10:03:35.622869 | INFO | Menú | Salir del sistema
+2026-02-11 10:03:43.847956 | INFO | Sistema GIC iniciado
+2026-02-11 10:03:43.848575 | INFO | Persistencia OK: cargados 0 clientes desde 'base_datos.txt'
+2026-02-11 10:03:43.849003 | INFO | Clientes cargados: 0
+2026-02-11 10:03:47.434486 | INFO | Menú | Crear cliente
+2026-02-11 10:04:20.783604 | ERROR | Persistencia ERROR al guardar en 'base_datos.txt': 'ClienteRegular' object has no attribute '_telefono'
+2026-02-11 10:04:20.784130 | INFO | Clientes guardados en archivo TXT
+2026-02-11 10:04:20.784506 | INFO | Cliente creado: Franco | solis@gmail.com
+2026-02-11 10:22:33.041384 | WARNING | Menú | Opción inválida ingresada: 2
+2026-02-11 10:22:46.629024 | ERROR | Persistencia ERROR al guardar en 'base_datos.txt': 'ClienteRegular' object has no attribute '_telefono'
+2026-02-11 10:22:46.629585 | INFO | Clientes guardados en archivo TXT
+2026-02-11 10:22:46.630065 | INFO | Menú | Salir del sistema
+2026-02-11 10:24:10.964684 | INFO | Sistema GIC iniciado
+2026-02-11 10:24:10.965247 | INFO | Persistencia OK: cargados 0 clientes desde 'base_datos.txt'
+2026-02-11 10:24:10.965572 | INFO | Clientes cargados: 0
+2026-02-11 10:24:13.709192 | INFO | Menú | Crear cliente
+2026-02-11 10:24:37.699275 | INFO | Persistencia OK: guardados 1 clientes en 'base_datos.txt'
+2026-02-11 10:24:37.699666 | INFO | Clientes guardados en archivo TXT
+2026-02-11 10:24:37.700046 | INFO | Cliente creado: Maria | maria@gmail.com
+2026-02-11 10:27:16.312151 | INFO | Menú | Crear cliente
+2026-02-11 11:08:06.287706 | INFO | Persistencia OK: guardados 2 clientes en 'base_datos.txt'
+2026-02-11 11:08:06.288104 | INFO | Clientes guardados en archivo TXT
+2026-02-11 11:08:06.288460 | INFO | Cliente creado: ANA | ANA@GMAIL.COM
+2026-02-11 11:08:19.550797 | INFO | Menú | Crear cliente
+2026-02-11 11:09:55.332024 | INFO | Persistencia OK: guardados 3 clientes en 'base_datos.txt'
+2026-02-11 11:09:55.332420 | INFO | Clientes guardados en archivo TXT
+2026-02-11 11:09:55.332790 | INFO | Cliente creado: Esteban | esteban@gmail.com
+2026-02-11 11:10:04.238390 | INFO | Menú | Crear cliente
+2026-02-11 11:10:20.062134 | WARNING | Fallo al crear cliente: El email '3' no tiene formato válido.
+2026-02-11 11:10:54.300753 | INFO | Menú | Crear cliente
+2026-02-11 11:11:14.661100 | INFO | Persistencia OK: guardados 4 clientes en 'base_datos.txt'
+2026-02-11 11:11:14.661508 | INFO | Clientes guardados en archivo TXT
+2026-02-11 11:11:14.661929 | INFO | Cliente creado: 3 | mart@gmail.com
+2026-02-11 11:13:37.490958 | INFO | Menú | Crear cliente
+2026-02-11 11:14:07.673822 | WARNING | Fallo al crear cliente: El nombre no puede estar vacío.
+2026-02-11 11:42:51.769569 | INFO | Menú | Crear cliente
+2026-02-11 11:43:14.995451 | WARNING | Fallo al crear cliente: El nombre no puede estar vacío.
+2026-02-11 11:43:23.018027 | INFO | Menú | Crear cliente
+2026-02-11 11:43:42.222250 | WARNING | Fallo al crear cliente: El apellido no puede estar vacío.
+2026-02-11 12:22:23.530807 | INFO | Persistencia OK: guardados 4 clientes en 'base_datos.txt'
+2026-02-11 12:22:23.531279 | INFO | Clientes guardados en archivo TXT
+2026-02-11 12:22:23.531667 | INFO | Menú | Salir del sistema
+2026-02-11 12:23:28.941103 | INFO | Sistema GIC iniciado
+2026-02-11 12:23:28.954967 | ERROR | TXT línea 2: error al reconstruir cliente: name 'validar_campo_no_vacio' is not defined
+2026-02-11 12:23:28.955376 | ERROR | TXT línea 3: error al reconstruir cliente: name 'validar_campo_no_vacio' is not defined
+2026-02-11 12:23:28.955743 | ERROR | TXT línea 4: error al reconstruir cliente: Nombre solo puede contener letras.
+2026-02-11 12:23:28.956094 | INFO | Persistencia OK: cargados 1 clientes desde 'base_datos.txt'
+2026-02-11 12:23:28.956415 | INFO | Clientes cargados: 1
+2026-02-11 12:23:36.952120 | WARNING | Menú | Opción inválida ingresada: 2
+2026-02-11 12:23:44.065930 | INFO | Menú | Crear cliente
+2026-02-11 12:24:12.606130 | INFO | Persistencia OK: guardados 2 clientes en 'base_datos.txt'
+2026-02-11 12:24:12.606584 | INFO | Clientes guardados en archivo TXT
+2026-02-11 12:24:12.606978 | INFO | Cliente creado: Sebastian | seba@gmail.com
+2026-02-11 12:24:22.856007 | WARNING | Menú | Opción inválida ingresada: 3
+2026-02-11 12:24:54.312056 | INFO | Menú | Crear cliente
+2026-02-11 12:25:23.396045 | WARNING | Fallo al crear cliente: Nombre obligatorio.
+2026-02-11 12:25:35.681467 | INFO | Menú | Crear cliente
+2026-02-11 12:26:20.268414 | WARNING | Fallo al crear cliente: El apellido no puede estar vacío.
+2026-02-11 12:26:23.782421 | INFO | Menú | Crear cliente
+2026-02-11 12:26:50.303519 | WARNING | Fallo al crear cliente: El apellido solo puede contener letras.
+2026-02-11 12:26:57.501057 | INFO | Menú | Crear cliente
+2026-02-11 12:27:20.608445 | WARNING | Fallo al crear cliente: El email 'lopez' no tiene formato válido.
+2026-02-11 12:32:11.198444 | INFO | Menú | Crear cliente
+2026-02-11 12:32:23.453146 | WARNING | Fallo al crear cliente: El email '' no tiene formato válido.
+2026-02-11 12:32:36.414503 | INFO | Menú | Crear cliente
+2026-02-11 12:32:52.624640 | WARNING | Fallo al crear cliente: El teléfono '' debe ser numérico (8-15 dígitos).
+2026-02-11 12:33:02.871605 | INFO | Menú | Crear cliente
+2026-02-11 12:33:30.299158 | WARNING | Fallo al crear cliente: El RUT es obligatorio para clientes Premium.
+2026-02-11 12:33:43.743321 | WARNING | Menú | Opción inválida ingresada: 
+2026-02-11 12:33:45.829320 | INFO | Menú | Crear cliente
+2026-02-11 12:34:20.610469 | ERROR | Error crítico creando cliente: name 'validar_campo_no_vacio' is not defined
+2026-02-11 12:42:23.913244 | INFO | Menú | Crear cliente
+2026-02-11 12:42:57.707725 | ERROR | Error crítico creando cliente: name 'validar_campo_no_vacio' is not defined
+2026-02-11 12:56:12.197704 | INFO | Persistencia OK: guardados 2 clientes en 'base_datos.txt'
+2026-02-11 12:56:12.198043 | INFO | Clientes guardados en archivo TXT
+2026-02-11 12:56:12.198355 | INFO | Menú | Salir del sistema
+2026-02-11 12:56:19.060205 | INFO | Sistema GIC iniciado
+2026-02-11 12:56:19.069129 | INFO | Persistencia OK: cargados 2 clientes desde 'base_datos.txt'
+2026-02-11 12:56:19.069531 | INFO | Clientes cargados: 2
+2026-02-11 12:56:21.152397 | INFO | Menú | Crear cliente
+2026-02-11 12:56:54.210639 | WARNING | Fallo al crear cliente: La dirección no puede estar vacío.
+2026-02-11 12:57:57.765395 | INFO | Persistencia OK: guardados 2 clientes en 'base_datos.txt'
+2026-02-11 12:57:57.765797 | INFO | Clientes guardados en archivo TXT
+2026-02-11 12:57:57.766149 | INFO | Menú | Salir del sistema
+2026-02-11 12:58:03.469453 | INFO | Sistema GIC iniciado
+2026-02-11 12:58:03.471532 | INFO | Persistencia OK: cargados 2 clientes desde 'base_datos.txt'
+2026-02-11 12:58:03.471989 | INFO | Clientes cargados: 2
+2026-02-11 12:58:07.904208 | WARNING | Menú | Opción inválida ingresada: 2
+2026-02-11 12:59:06.826625 | INFO | Persistencia OK: guardados 2 clientes en 'base_datos.txt'
+2026-02-11 12:59:06.827020 | INFO | Clientes guardados en archivo TXT
+2026-02-11 12:59:06.827393 | INFO | Menú | Salir del sistema
+2026-02-11 12:59:14.622336 | INFO | Sistema GIC iniciado
+2026-02-11 12:59:14.623932 | INFO | Persistencia OK: cargados 2 clientes desde 'base_datos.txt'
+2026-02-11 12:59:14.624280 | INFO | Clientes cargados: 2
+2026-02-11 12:59:17.004071 | INFO | Menú | Listar clientes

@@ -1,0 +1,90 @@
+classDiagram
+
+class Cliente {
+  -_nombre: str
+  -_apellido: str
+  -_email: str
+  -_telefono: str
+  +obtener_descuento() float
+  +convertir_a_texto() str
+  +__str__() str
+  +__eq__(other) bool
+}
+
+class ClienteRegular {
+  +obtener_descuento() float
+  +convertir_a_texto() str
+  +__str__() str
+}
+
+class ClientePremium {
+  -__rut: str
+  -_direccion: str
+  +rut: str
+  +direccion: str
+  +obtener_descuento() float
+  +convertir_a_texto() str
+  +__str__() str
+}
+
+class ClienteCorporativo {
+  -empresa: str
+  -__rut: str
+  -_direccion: str
+  +rut: str
+  +direccion: str
+  +obtener_descuento() float
+  +convertir_a_texto() str
+  +__str__() str
+}
+
+Cliente <|-- ClienteRegular
+Cliente <|-- ClientePremium
+Cliente <|-- ClienteCorporativo
+
+
+class GestorClientes {
+  -_archivo_txt: str
+  -_clientes: list~Cliente~
+  -_log: LoggerGIC
+  +cargar()
+  +guardar()
+  +agregar_cliente(nuevo_cliente: Cliente) bool
+  +listar_clientes()
+  +buscar_por_nombre_email(nombre: str, email: str) Cliente
+  +crear_cliente_interactivo() Cliente
+  +editar_interactivo()
+  +eliminar_interactivo() bool
+  +es_duplicado(nuevo_cliente: Cliente) bool
+}
+
+GestorClientes "1" *-- "0..*" Cliente : contiene
+
+
+class LoggerGIC {
+  +info(msg)
+  +warning(msg)
+  +error(msg)
+}
+
+GestorClientes --> LoggerGIC : usa
+
+class Validadores {
+  +validar_email(email) bool
+  +validar_telefono(tel) bool
+  +validar_direccion(dir) str
+  +validar_campo_no_vacio(txt) bool
+}
+
+Cliente ..> Validadores : valida datos
+
+class GICError
+class DatoInvalidoError
+GICError <|-- DatoInvalidoError
+Cliente ..> DatoInvalidoError : lanza
+
+class PersistenciaTXT {
+  +guardar_clientes_txt(clientes, ruta)
+  +cargar_clientes_txt(ruta) list~Cliente~
+}
+GestorClientes ..> PersistenciaTXT : usa
