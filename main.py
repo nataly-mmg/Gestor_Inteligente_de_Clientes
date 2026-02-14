@@ -38,7 +38,6 @@ def main():
                 else:
                     print("⚠️ Cliente duplicado.")
 
-
             elif op == "2":
                 log.info("Menú | Listar clientes")
                 print("\n--- LISTADO DE CLIENTES ---")

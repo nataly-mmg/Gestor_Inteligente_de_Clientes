@@ -6,6 +6,8 @@ from modulos.clientes import (ClienteRegular, ClientePremium, ClienteCorporativo
 
 from modulos.errores import DatoInvalidoError, ClienteNoEncontradoError
 
+from modulos.validadores import Validador
+
 #___________ Registro de eventos
 
 ARCHIVO_TXT = "base_datos.txt"
@@ -42,10 +44,25 @@ class GestorClientes:
         nombre = nombre.strip().lower()
         email = email.strip().lower()
 
+
+        # -------- VALIDACIONES --------
+        if not Validador.validar_campo_no_vacio(nombre):
+            raise DatoInvalidoError("Nombre obligatorio.")
+
+        if not Validador.validar_solo_letras(nombre):
+            raise DatoInvalidoError("El nombre solo puede contener letras.")
+
+        if not Validador.validar_email(email):
+            raise DatoInvalidoError("Email con formato inválido.")
+
+        # -------- BÚSQUEDA --------
         for c in self.clientes:  
             if c.nombre.lower() == nombre and c.email.lower() == email:
                 return c
-        return None
+            
+         # -------- NO ENCONTRADO --------
+        raise ClienteNoEncontradoError("Cliente no encontrado con ese nombre y email.")
+
 
     def es_duplicado(self, nuevo_cliente):
         # usa __eq__ 
@@ -89,12 +106,44 @@ class GestorClientes:
             return None
 
         try:
-            # Datos base 
-            nombre = input("Nombre: ").strip()
-            apellido = input("Apellido: ").strip()
-            email = input("Email: ").strip()
-            tel = input("Teléfono: ").strip()
+        # -------------------------
+        # DATOS BASE (con validación individual)
+        # -------------------------
+             
+            # nombre = input("Nombre: ").strip()
+            # apellido = input("Apellido: ").strip()
+            # email = input("Email: ").strip()
+            # tel = input("Teléfono: ").strip()
 
+
+            nombre = self.pedir_dato(
+                "Nombre: ",
+                (Validador.validar_campo_no_vacio, "Nombre obligatorio."),
+                (Validador.validar_solo_letras, "Nombre solo puede contener letras.")
+            )
+            
+            apellido = self.pedir_dato(
+                "Apellido: ",
+                (Validador.validar_campo_no_vacio, "Apellido obligatorio."),
+                (Validador.validar_solo_letras, "Apellido solo puede contener letras.")
+            )
+
+            email = self.pedir_dato(
+                "Email: ",
+                (Validador.validar_campo_no_vacio, "Email obligatorio."),
+                (Validador.validar_email, "Email con formato inválido.")
+            )
+
+            tel = self.pedir_dato(
+                "Teléfono: ",
+                (Validador.validar_campo_no_vacio, "Teléfono obligatorio."),
+                (Validador.validar_telefono, "Teléfono debe ser numérico (8-15 dígitos).")
+            )
+
+
+        # -------------------------
+        # SEGÚN TIPO
+        # -------------------------
          
             if tipo == "1":
                 # ClienteRegular(nombre, apellido, email, tel)
@@ -102,15 +151,39 @@ class GestorClientes:
 
             elif tipo == "2":
                 # ClientePremium(nombre, apellido, rut, email, tel, dirc)
-                rut = input("RUT persona: ").strip()
-                dirc = input("Dirección: ").strip()
+                
+                rut = self.pedir_dato(
+                    "RUT: ",
+                    (Validador.validar_campo_no_vacio, "RUT obligatorio."),
+                    (Validador.validar_rut, "RUT inválido.")
+                )
+
+                dirc = self.pedir_dato(
+                    "Dirección: ",
+                    (Validador.validar_campo_no_vacio, "Dirección obligatoria."),
+                )
+
                 nuevo_cliente = ClientePremium(nombre, apellido, rut, email, tel, dirc)
 
             elif tipo == "3":
                 # ClienteCorporativo(nombre, apellido, email, tel, empresa, dirc, rut)
-                empresa = input("Razón Social (Empresa): ").strip()
-                dirc = input("Dirección: ").strip()
-                rut = input("RUT empresa: ").strip()
+
+                empresa = self.pedir_dato(
+                    "Empresa (Razón Social): ",
+                    (Validador.validar_campo_no_vacio, "Empresa (Razón Social) obligatoria."),
+                )
+
+                rut = self.pedir_dato(
+                    "RUT: ",
+                    (Validador.validar_campo_no_vacio, "RUT obligatorio."),
+                    (Validador.validar_rut, "RUT inválido.")
+                )
+
+                dirc = self.pedir_dato(
+                    "Dirección: ",
+                    (Validador.validar_campo_no_vacio, "Dirección obligatoria."),
+                )
+
                 nuevo_cliente = ClienteCorporativo(nombre, apellido, email, tel, empresa, dirc, rut)
 
             else:
@@ -132,7 +205,7 @@ class GestorClientes:
 
 
 
-# -------------------------
+    # -------------------------
     # Editar
     # -------------------------
 
@@ -144,31 +217,59 @@ class GestorClientes:
             return
 
         # Identificación del cliente
-        nombre = input("Nombre del cliente: ").strip()
-        email = input("Email del cliente: ").strip()
+        # nombre = input("Nombre del cliente: ").strip()
+        # email = input("Email del cliente: ").strip()
 
-        cliente = None
-        for c in self._clientes:
-            if c.nombre.lower() == nombre.lower() and c.email.lower() == email.lower():
-                cliente = c
-                break
 
-        if cliente is None:
-            try:
+        try:
+            nombre = self.pedir_dato("Nombre del cliente: ",
+                (Validador.validar_campo_no_vacio, "Nombre obligatorio."),
+                (Validador.validar_solo_letras, "Nombre solo puede contener letras.")
+            )
+
+            email = self.pedir_dato("Email del cliente: ",
+                (Validador.validar_campo_no_vacio, "Email obligatorio."),
+                (Validador.validar_email, "Email con formato inválido.")
+            )
+
+
+            # Busca (ideal: este método lanza ClienteNoEncontradoError si no existe)
+            cliente = self.buscar_por_nombre_email(nombre, email)
+
+            if cliente is None:
                 raise ClienteNoEncontradoError("Cliente no encontrado con ese nombre y email.")
-            except ClienteNoEncontradoError as e:
-                print(f"❌ {e}")
-                self._log.warning(str(e))
-                return
+
+        except ClienteNoEncontradoError as e:
+            print(f"❌ {e}")
+            self._log.warning(str(e))
+            return
+
+        except DatoInvalidoError as e:
+            print(f"❌ {e}")
+            self._log.warning(f"Identificación inválida en edición: {e}")
+            return
+        
+        except Exception as e:
+            print(f"❌ Error inesperado: {e}")
+            self._log.error(f"Error inesperado en identificación (editar): {e}")
+            return
+
 
         print(f"\nEditando cliente: {cliente.nombre} {cliente.apellido}")
         print("Presione ENTER para mantener el valor actual.\n")
 
+
+        # -------------------------
+        # EDICIÓN (con pedir_dato y ENTER mantiene)
+        # -------------------------
+
         try:
             # --- CAMPOS COMUNES ---
+           
             nuevo_nombre = input(f"Nombre ({cliente.nombre}): ").strip()
             if nuevo_nombre:
-                cliente.nombre = nuevo_nombre
+                cliente.nombre = nuevo_nombre  # setter valida no vacío + solo letras
+
 
             nuevo_apellido = input(f"Apellido ({cliente.apellido}): ").strip()
             if nuevo_apellido:
@@ -182,28 +283,31 @@ class GestorClientes:
             if nuevo_tel:
                 cliente.telefono = nuevo_tel
 
-            # --- CAMPOS SEGÚN TIPO ---
             if isinstance(cliente, ClientePremium):
-                nuevo_rut = input(f"RUT ({cliente.rut}): ").strip()
+                nuevo_rut = input("RUT persona (ENTER para mantener): ").strip()
                 if nuevo_rut:
-                    cliente.rut = nuevo_rut
+                        cliente.rut = nuevo_rut
 
                 nueva_dir = input(f"Dirección ({cliente.direccion}): ").strip()
                 if nueva_dir:
-                    cliente.direccion = nueva_dir
+                        cliente.direccion = nueva_dir
 
             elif isinstance(cliente, ClienteCorporativo):
                 nueva_empresa = input(f"Empresa ({cliente.empresa}): ").strip()
                 if nueva_empresa:
-                    cliente.empresa = nueva_empresa
+                        cliente.empresa = nueva_empresa
 
-                nuevo_rut = input(f"RUT Empresa ({cliente.rut}): ").strip()
+                nuevo_rut = input("RUT empresa (ENTER para mantener): ").strip()
                 if nuevo_rut:
-                    cliente.rut = nuevo_rut
+                        cliente.rut = nuevo_rut
 
                 nueva_dir = input(f"Dirección ({cliente.direccion}): ").strip()
                 if nueva_dir:
-                    cliente.direccion = nueva_dir
+                        cliente.direccion = nueva_dir
+
+
+            # Guardar cambios
+            self.guardar()
 
             print("✅ Cliente actualizado correctamente.")
             self._log.info(f"Cliente editado: {cliente.nombre} {cliente.apellido} | {cliente.email}")
@@ -211,6 +315,11 @@ class GestorClientes:
         except (ValueError, DatoInvalidoError) as e:
             print(f"❌ Error al editar cliente: {e}")
             self._log.warning(f"Error al editar cliente ({cliente.nombre} | {cliente.email}): {e}")
+
+
+        except Exception as e:
+            print(f"❌ Error inesperado: {e}")
+            self._log.error(f"Error inesperado editando cliente ({cliente.nombre} | {cliente.email}): {e}")
 
 
     # -------------------------
@@ -242,3 +351,35 @@ class GestorClientes:
 
 
     # --------------
+# Pedor dato Es una función que:
+
+# Muestra el mensaje
+
+# Ejecuta una validación
+
+# Si falla → muestra error
+
+# Si pasa → retorna el valor
+
+# Repite hasta que sea válido
+    # --------------
+
+    def pedir_dato(self, mensaje, *reglas):
+
+    # reglas: tuplas (funcion_validacion, mensaje_error)
+
+        while True:
+            valor = input(mensaje).strip()
+
+            try:
+                for funcion, msg_error in reglas:
+                    if not funcion(valor):
+                        raise DatoInvalidoError(msg_error)
+
+                return valor  # ✅ pasó todas las validaciones
+
+            except DatoInvalidoError as e:
+                print(f"🛑 {e}")
+                self._log.warning(str(e))
+
+

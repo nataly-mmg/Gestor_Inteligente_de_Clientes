@@ -192,3 +192,118 @@
 2026-02-13 22:35:53.952214 | WARNING | Cliente no encontrado con ese nombre y email.
 2026-02-13 22:37:59.553989 | INFO | Menú | Crear cliente
 2026-02-13 22:38:43.688264 | WARNING | Fallo al crear cliente: Nombre obligatorio.
+2026-02-14 10:39:48.938205 | INFO | Persistencia OK: guardados 5 clientes en 'base_datos.txt'
+2026-02-14 10:39:48.938679 | INFO | Clientes guardados en archivo TXT
+2026-02-14 10:39:48.939087 | INFO | Menú | Salir del sistema
+2026-02-14 10:39:58.266869 | INFO | Sistema GIC iniciado
+2026-02-14 10:39:58.267675 | INFO | Persistencia OK: cargados 5 clientes desde 'base_datos.txt'
+2026-02-14 10:39:58.267997 | INFO | Clientes cargados: 5
+2026-02-14 10:40:20.913257 | INFO | Menú | Crear cliente
+2026-02-14 10:40:26.188960 | WARNING | Nombre obligatorio.
+2026-02-14 10:40:35.777053 | WARNING | Nombre solo puede contener letras.
+2026-02-14 10:40:45.994409 | WARNING | Apellido solo puede contener letras.
+2026-02-14 10:40:47.092470 | WARNING | Apellido obligatorio.
+2026-02-14 10:40:54.436047 | WARNING | Email obligatorio.
+2026-02-14 10:41:10.294047 | WARNING | Teléfono obligatorio.
+2026-02-14 10:41:14.753229 | INFO | Persistencia OK: guardados 6 clientes en 'base_datos.txt'
+2026-02-14 10:41:14.753614 | INFO | Clientes guardados en archivo TXT
+2026-02-14 10:41:14.754006 | INFO | Cliente creado: Valeria | valeria@gmail.com
+2026-02-14 10:41:22.340584 | INFO | Menú | Crear cliente
+2026-02-14 10:41:27.391356 | WARNING | Nombre obligatorio.
+2026-02-14 10:41:33.612678 | WARNING | Nombre solo puede contener letras.
+2026-02-14 10:42:49.822506 | WARNING | Email obligatorio.
+2026-02-14 10:42:56.141260 | WARNING | Email con formato inválido.
+2026-02-14 10:43:07.188063 | WARNING | Teléfono obligatorio.
+2026-02-14 10:43:11.181991 | WARNING | Teléfono debe ser numérico (8-15 dígitos).
+2026-02-14 10:43:20.888838 | WARNING | RUT obligatorio.
+2026-02-14 10:43:45.673286 | WARNING | Dirección obligatoria.
+2026-02-14 10:43:51.330588 | INFO | Persistencia OK: guardados 7 clientes en 'base_datos.txt'
+2026-02-14 10:43:51.330978 | INFO | Clientes guardados en archivo TXT
+2026-02-14 10:43:51.331354 | INFO | Cliente creado: Alvaro | valde@gmail.com
+2026-02-14 10:44:04.360607 | INFO | Menú | Crear cliente
+2026-02-14 10:44:27.347396 | WARNING | Email obligatorio.
+2026-02-14 10:44:32.195262 | WARNING | Email con formato inválido.
+2026-02-14 10:44:44.960248 | WARNING | Teléfono obligatorio.
+2026-02-14 10:44:50.160653 | WARNING | Empresa (Razón Social) obligatoria.
+2026-02-14 10:45:52.788648 | WARNING | RUT inválido.
+2026-02-14 10:46:01.363933 | WARNING | Dirección obligatoria.
+2026-02-14 10:46:09.624021 | INFO | Persistencia OK: guardados 8 clientes en 'base_datos.txt'
+2026-02-14 10:46:09.624424 | INFO | Clientes guardados en archivo TXT
+2026-02-14 10:46:09.624785 | INFO | Cliente creado: Rosa | Rosa@Mendez.cl
+2026-02-14 10:46:13.959352 | INFO | Menú | Listar clientes
+2026-02-14 10:47:04.653854 | INFO | Menú | Editar cliente
+2026-02-14 10:47:20.921972 | WARNING | Cliente no encontrado con ese nombre y email.
+2026-02-14 11:08:13.297843 | INFO | Menú | Editar cliente
+2026-02-14 11:08:15.459628 | WARNING | Cliente no encontrado con ese nombre y email.
+2026-02-14 11:16:50.501809 | INFO | Persistencia OK: guardados 8 clientes en 'base_datos.txt'
+2026-02-14 11:16:50.502203 | INFO | Clientes guardados en archivo TXT
+2026-02-14 11:16:50.502571 | INFO | Menú | Salir del sistema
+2026-02-14 11:16:59.335036 | INFO | Sistema GIC iniciado
+2026-02-14 11:16:59.336010 | INFO | Persistencia OK: cargados 8 clientes desde 'base_datos.txt'
+2026-02-14 11:16:59.336362 | INFO | Clientes cargados: 8
+2026-02-14 11:17:02.903354 | INFO | Menú | Editar cliente
+2026-02-14 11:17:04.842859 | WARNING | Nombre obligatorio.
+2026-02-14 11:17:29.365739 | WARNING | Email obligatorio.
+2026-02-14 11:17:32.031139 | WARNING | Email con formato inválido.
+2026-02-14 11:18:05.511715 | INFO | Cliente editado: Maria Solis | maria@gmail.com
+2026-02-14 11:18:10.699146 | INFO | Menú | Editar cliente
+2026-02-14 11:20:16.279830 | WARNING | Teléfono debe ser numérico (8-15 dígitos).
+2026-02-14 11:20:31.122237 | WARNING | Teléfono obligatorio.
+2026-02-14 11:20:39.716717 | INFO | Cliente editado: Mario SOLIS | seba@gmail.com
+2026-02-14 11:20:47.123944 | INFO | Menú | Listar clientes
+2026-02-14 11:35:14.757005 | INFO | Persistencia OK: guardados 8 clientes en 'base_datos.txt'
+2026-02-14 11:35:14.757408 | INFO | Clientes guardados en archivo TXT
+2026-02-14 11:35:14.757764 | INFO | Menú | Salir del sistema
+2026-02-14 11:35:18.742161 | INFO | Sistema GIC iniciado
+2026-02-14 11:35:18.743085 | INFO | Persistencia OK: cargados 8 clientes desde 'base_datos.txt'
+2026-02-14 11:35:18.743416 | INFO | Clientes cargados: 8
+2026-02-14 11:35:21.220020 | INFO | Menú | Editar cliente
+2026-02-14 11:35:30.294852 | WARNING | Nombre solo puede contener letras.
+2026-02-14 11:35:47.359713 | WARNING | Nombre obligatorio.
+2026-02-14 11:35:51.738780 | WARNING | Email obligatorio.
+2026-02-14 12:50:09.041042 | INFO | Sistema GIC iniciado
+2026-02-14 12:50:09.042658 | INFO | Persistencia OK: cargados 8 clientes desde 'base_datos.txt'
+2026-02-14 12:50:09.042991 | INFO | Clientes cargados: 8
+2026-02-14 12:50:11.190271 | INFO | Menú | Crear cliente
+2026-02-14 12:50:35.980480 | WARNING | Teléfono debe ser numérico (8-15 dígitos).
+2026-02-14 12:50:39.618786 | INFO | Persistencia OK: guardados 9 clientes en 'base_datos.txt'
+2026-02-14 12:50:39.619235 | INFO | Clientes guardados en archivo TXT
+2026-02-14 12:50:39.619598 | INFO | Cliente creado: Ayelen | Ayelen@gmail.com
+2026-02-14 12:50:45.012938 | INFO | Menú | Crear cliente
+2026-02-14 12:50:48.664593 | WARNING | Nombre obligatorio.
+2026-02-14 12:51:04.612173 | WARNING | Email obligatorio.
+2026-02-14 12:51:18.759270 | WARNING | RUT obligatorio.
+2026-02-14 12:51:43.077907 | INFO | Persistencia OK: guardados 10 clientes en 'base_datos.txt'
+2026-02-14 12:51:43.078298 | INFO | Clientes guardados en archivo TXT
+2026-02-14 12:51:43.078655 | INFO | Cliente creado: Evelyn | eve@gmail.com
+2026-02-14 12:51:46.845806 | INFO | Menú | Crear cliente
+2026-02-14 12:52:00.735578 | WARNING | Email obligatorio.
+2026-02-14 12:52:10.240513 | WARNING | Teléfono obligatorio.
+2026-02-14 12:52:38.398500 | INFO | Persistencia OK: guardados 11 clientes en 'base_datos.txt'
+2026-02-14 12:52:38.398934 | INFO | Clientes guardados en archivo TXT
+2026-02-14 12:52:38.399303 | INFO | Cliente creado: Ramón | ramon@gmail.com
+2026-02-14 12:52:42.472733 | INFO | Menú | Listar clientes
+2026-02-14 12:52:48.163634 | INFO | Menú | Editar cliente
+2026-02-14 12:52:49.632374 | WARNING | Nombre obligatorio.
+2026-02-14 12:52:59.971578 | WARNING | Nombre solo puede contener letras.
+2026-02-14 12:53:04.335391 | WARNING | Email obligatorio.
+2026-02-14 12:53:07.988328 | WARNING | Email obligatorio.
+2026-02-14 12:53:24.322591 | WARNING | Cliente no encontrado con ese nombre y email.
+2026-02-14 12:53:35.554853 | INFO | Menú | Editar cliente
+2026-02-14 12:53:54.611095 | WARNING | Email obligatorio.
+2026-02-14 12:54:16.689806 | ERROR | Error inesperado editando cliente (Ramón | ramon@gmail.com): GestorClientes.pedir_dato() got an unexpected keyword argument 'mensaje_error'
+2026-02-14 12:54:54.523554 | INFO | Menú | Editar cliente
+2026-02-14 12:55:25.876567 | ERROR | Error inesperado editando cliente (Rosa | Rosa@Mendez.cl): GestorClientes.pedir_dato() got an unexpected keyword argument 'mensaje_error'
+2026-02-14 13:18:47.744063 | INFO | Persistencia OK: guardados 11 clientes en 'base_datos.txt'
+2026-02-14 13:18:47.744448 | INFO | Clientes guardados en archivo TXT
+2026-02-14 13:18:47.744817 | INFO | Menú | Salir del sistema
+2026-02-14 13:18:51.644810 | INFO | Sistema GIC iniciado
+2026-02-14 13:18:51.646422 | INFO | Persistencia OK: cargados 11 clientes desde 'base_datos.txt'
+2026-02-14 13:18:51.646779 | INFO | Clientes cargados: 11
+2026-02-14 13:18:54.714863 | INFO | Menú | Listar clientes
+2026-02-14 13:18:56.851687 | INFO | Menú | Editar cliente
+2026-02-14 13:18:58.268902 | WARNING | Nombre obligatorio.
+2026-02-14 13:19:50.928816 | INFO | Persistencia OK: guardados 11 clientes en 'base_datos.txt'
+2026-02-14 13:19:50.929271 | INFO | Clientes guardados en archivo TXT
+2026-02-14 13:19:50.929761 | INFO | Cliente editado: Evelyn soto | eve@gmail.com
+2026-02-14 13:19:54.804397 | INFO | Menú | Listar clientes
