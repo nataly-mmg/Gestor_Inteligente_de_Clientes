@@ -338,3 +338,6 @@
 2026-02-14 13:51:05.858194 | INFO | Menú | Eliminar cliente
 2026-02-14 13:51:15.559831 | INFO | Solicitud de eliminación: e | ramon@gmail.com
 2026-02-14 13:51:15.560452 | WARNING | Eliminar cliente | no encontrado: e | ramon@gmail.com
+2026-02-14 13:58:15.888378 | INFO | Persistencia OK: guardados 10 clientes en 'base_datos.txt'
+2026-02-14 13:58:15.888942 | INFO | Clientes guardados en archivo TXT
+2026-02-14 13:58:15.889379 | INFO | Menú | Salir del sistema

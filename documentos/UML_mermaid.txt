@@ -49,13 +49,14 @@ class GestorClientes {
   -_log: LoggerGIC
   +cargar()
   +guardar()
-  +agregar_cliente(nuevo_cliente: Cliente) bool
-  +listar_clientes()
   +buscar_por_nombre_email(nombre: str, email: str) Cliente
+  +es_duplicado(nuevo_cliente: Cliente) bool
+  +agregar_cliente(nuevo_cliente: Cliente) bool
   +crear_cliente_interactivo() Cliente
+  +listar_clientes()
   +editar_interactivo()
   +eliminar_interactivo() bool
-  +es_duplicado(nuevo_cliente: Cliente) bool
+  +pedir_dato(mensaje: str, reglas: tuple) str
 }
 
 GestorClientes "1" *-- "0..*" Cliente : contiene
@@ -70,21 +71,31 @@ class LoggerGIC {
 GestorClientes --> LoggerGIC : usa
 
 class Validadores {
-  +validar_email(email) bool
-  +validar_telefono(tel) bool
-  +validar_direccion(dir) str
-  +validar_campo_no_vacio(txt) bool
+  <<static>>
+  +validar_email(email: str) bool
+  +validar_telefono(telefono: str) bool
+  +validar_campo_no_vacio(texto: str) bool
+  +validar_solo_letras(texto: str) bool
+  +validar_rut(rut: str) bool
 }
 
-Cliente ..> Validadores : valida datos
+Cliente ..> Validadores : valida 
 
 class GICError
 class DatoInvalidoError
+class ClienteNoEncontradoError
+
 GICError <|-- DatoInvalidoError
+GICError <|-- ClienteNoEncontradoError
+
 Cliente ..> DatoInvalidoError : lanza
+GestorClientes ..> ClienteNoEncontradoError : lanza
 
 class PersistenciaTXT {
-  +guardar_clientes_txt(clientes, ruta)
+  <<module>>
+  +guardar_clientes_txt(clientes: list~Cliente~, ruta: str)
   +cargar_clientes_txt(ruta) list~Cliente~
 }
+
 GestorClientes ..> PersistenciaTXT : usa
+PersistenciaTXT ..> Cliente : reconstruye
