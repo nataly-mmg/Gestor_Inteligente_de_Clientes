@@ -307,3 +307,34 @@
 2026-02-14 13:19:50.929271 | INFO | Clientes guardados en archivo TXT
 2026-02-14 13:19:50.929761 | INFO | Cliente editado: Evelyn soto | eve@gmail.com
 2026-02-14 13:19:54.804397 | INFO | Menú | Listar clientes
+2026-02-14 13:47:08.609717 | INFO | Persistencia OK: guardados 11 clientes en 'base_datos.txt'
+2026-02-14 13:47:08.610233 | INFO | Clientes guardados en archivo TXT
+2026-02-14 13:47:08.610720 | INFO | Menú | Salir del sistema
+2026-02-14 13:47:15.630844 | INFO | Sistema GIC iniciado
+2026-02-14 13:47:15.631922 | INFO | Persistencia OK: cargados 11 clientes desde 'base_datos.txt'
+2026-02-14 13:47:15.632267 | INFO | Clientes cargados: 11
+2026-02-14 13:47:18.892234 | INFO | Menú | Listar clientes
+2026-02-14 13:47:21.527359 | INFO | Menú | Eliminar cliente
+2026-02-14 13:48:04.817676 | INFO | Solicitud de eliminación: evelyn | eve@gmail.com
+2026-02-14 13:48:04.819036 | INFO | Persistencia OK: guardados 10 clientes en 'base_datos.txt'
+2026-02-14 13:48:04.819421 | INFO | Clientes guardados en archivo TXT
+2026-02-14 13:48:04.819818 | INFO | Cliente eliminado: Evelyn | eve@gmail.com
+2026-02-14 13:48:16.068676 | INFO | Menú | Listar clientes
+2026-02-14 13:48:56.275509 | WARNING | Menú | Opción inválida ingresada: 
+2026-02-14 13:48:59.423714 | INFO | Menú | Eliminar cliente
+2026-02-14 13:50:08.259231 | WARNING | Nombre obligatorio.
+2026-02-14 13:50:09.052243 | WARNING | Nombre obligatorio.
+2026-02-14 13:50:09.752146 | WARNING | Nombre obligatorio.
+2026-02-14 13:50:34.252914 | WARNING | Email no tiene formato válido.
+2026-02-14 13:50:37.830645 | WARNING | Email no tiene formato válido.
+2026-02-14 13:50:46.688769 | INFO | Solicitud de eliminación: o | ramon@gmail.com
+2026-02-14 13:50:46.689493 | WARNING | Eliminar cliente | no encontrado: o | ramon@gmail.com
+2026-02-14 13:50:54.510257 | INFO | Persistencia OK: guardados 10 clientes en 'base_datos.txt'
+2026-02-14 13:50:54.510661 | INFO | Clientes guardados en archivo TXT
+2026-02-14 13:50:54.511121 | INFO | Menú | Salir del sistema
+2026-02-14 13:51:02.328787 | INFO | Sistema GIC iniciado
+2026-02-14 13:51:02.329627 | INFO | Persistencia OK: cargados 10 clientes desde 'base_datos.txt'
+2026-02-14 13:51:02.329951 | INFO | Clientes cargados: 10
+2026-02-14 13:51:05.858194 | INFO | Menú | Eliminar cliente
+2026-02-14 13:51:15.559831 | INFO | Solicitud de eliminación: e | ramon@gmail.com
+2026-02-14 13:51:15.560452 | WARNING | Eliminar cliente | no encontrado: e | ramon@gmail.com

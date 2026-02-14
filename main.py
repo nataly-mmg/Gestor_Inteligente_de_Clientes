@@ -49,6 +49,11 @@ def main():
                 gestor.editar_interactivo()
 
 
+            elif op == "4":
+                log.info("Menú | Eliminar cliente")
+                gestor.eliminar_interactivo()
+
+
             elif op == "5":
                 gestor.guardar()
                 log.info("Menú | Salir del sistema")

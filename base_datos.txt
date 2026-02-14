@@ -7,5 +7,4 @@ ClienteRegular|Valeria|ROjas|valeria@gmail.com|323212321
 ClientePremium|Alvaro|Valdebenito|6-069.062-6|valde@gmail.com|232123323|PMO
 ClienteCorporativo|Rosa|Mendez|Rosa@Mendez.cl|232444343|rosas spa|Santiago|15.371.275-1
 ClienteRegular|Ayelen|Ortiz|Ayelen@gmail.com|212232122
-ClientePremium|Evelyn|soto|5.542.409-8|eve@gmail.com|21222221121|Santiago
 ClienteCorporativo|Ramón|Sanchez|ramon@gmail.com|231286653|Centro educativo spa|Castro|5.542.409-8

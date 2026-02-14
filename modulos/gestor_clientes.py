@@ -86,9 +86,6 @@ class GestorClientes:
         return True
 
 
-
-
-
     # -------------------------
     # CREACIÓN INTERACTIVA 
     # -------------------------
@@ -110,12 +107,6 @@ class GestorClientes:
         # DATOS BASE (con validación individual)
         # -------------------------
              
-            # nombre = input("Nombre: ").strip()
-            # apellido = input("Apellido: ").strip()
-            # email = input("Email: ").strip()
-            # tel = input("Teléfono: ").strip()
-
-
             nombre = self.pedir_dato(
                 "Nombre: ",
                 (Validador.validar_campo_no_vacio, "Nombre obligatorio."),
@@ -217,9 +208,7 @@ class GestorClientes:
             return
 
         # Identificación del cliente
-        # nombre = input("Nombre del cliente: ").strip()
-        # email = input("Email del cliente: ").strip()
-
+    
 
         try:
             nombre = self.pedir_dato("Nombre del cliente: ",
@@ -383,3 +372,50 @@ class GestorClientes:
                 self._log.warning(str(e))
 
 
+    # -------------------------
+    # Eliminar (por nombre+email)
+    # -------------------------
+    def eliminar_interactivo(self):
+        print("\n--- 🗑️  ELIMINAR CLIENTE ---")
+
+        try:
+            nombre = self.pedir_dato(
+                "Nombre: ",
+                (Validador.validar_campo_no_vacio, "Nombre obligatorio."),
+                (Validador.validar_solo_letras, "Nombre solo puede contener letras.")
+            )
+
+            email = self.pedir_dato(
+                "Email: ",
+                (Validador.validar_campo_no_vacio, "Email obligatorio."),
+                (Validador.validar_email, "Email no tiene formato válido.")
+            )
+
+            self._log.info(f"Solicitud de eliminación: {nombre} | {email}")
+
+            cliente = self.buscar_por_nombre_email(nombre, email)
+
+            if not cliente:
+                raise ClienteNoEncontradoError("Cliente no encontrado con ese nombre y email.")
+
+            self._clientes.remove(cliente)
+            self.guardar()
+
+            self._log.info(f"Cliente eliminado: {cliente.nombre} | {cliente.email}")
+            print("✅ Cliente eliminado.")
+            return True
+
+        except (DatoInvalidoError, ValueError) as e:
+            print(f"🛑 Error de datos: {e}")
+            self._log.warning(f"Eliminar cliente | datos inválidos: {e}")
+            return False
+
+        except ClienteNoEncontradoError as e:
+            print(f"❌ {e}")
+            self._log.warning(f"Eliminar cliente | no encontrado: {nombre} | {email}")
+            return False
+
+        except Exception as e:
+            print(f"🔥 Error inesperado: {e}")
+            self._log.error(f"Eliminar cliente | error crítico: {e}")
+            return False
