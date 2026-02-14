@@ -131,3 +131,64 @@
 2026-02-11 12:59:14.623932 | INFO | Persistencia OK: cargados 2 clientes desde 'base_datos.txt'
 2026-02-11 12:59:14.624280 | INFO | Clientes cargados: 2
 2026-02-11 12:59:17.004071 | INFO | Menú | Listar clientes
+2026-02-13 20:17:17.780779 | INFO | Sistema GIC iniciado
+2026-02-13 20:17:17.781722 | INFO | Persistencia OK: cargados 2 clientes desde 'base_datos.txt'
+2026-02-13 20:17:17.782117 | INFO | Clientes cargados: 2
+2026-02-13 20:19:02.280198 | INFO | Menú | Crear cliente
+2026-02-13 20:27:18.176073 | INFO | Persistencia OK: guardados 3 clientes en 'base_datos.txt'
+2026-02-13 20:27:18.176456 | INFO | Clientes guardados en archivo TXT
+2026-02-13 20:27:18.176836 | INFO | Cliente creado: Margarita | margarita@parra.com
+2026-02-13 20:41:02.493848 | INFO | Persistencia OK: guardados 3 clientes en 'base_datos.txt'
+2026-02-13 20:41:02.494262 | INFO | Clientes guardados en archivo TXT
+2026-02-13 20:41:02.494632 | INFO | Menú | Salir del sistema
+2026-02-13 20:41:09.409577 | INFO | Sistema GIC iniciado
+2026-02-13 20:41:09.410372 | ERROR | TXT línea 3: error al reconstruir cliente: El RUT ingresado no es válido.
+2026-02-13 20:41:09.410739 | INFO | Persistencia OK: cargados 2 clientes desde 'base_datos.txt'
+2026-02-13 20:41:09.411064 | INFO | Clientes cargados: 2
+2026-02-13 20:41:13.518542 | INFO | Menú | Crear cliente
+2026-02-13 20:42:34.569580 | WARNING | Fallo al crear cliente: El RUT ingresado no es válido.
+2026-02-13 21:34:17.056953 | INFO | Menú | Crear cliente
+2026-02-13 21:35:57.547826 | WARNING | Fallo al crear cliente: El RUT ingresado no es válido.
+2026-02-13 21:37:06.366785 | INFO | Menú | Crear cliente
+2026-02-13 21:39:49.635891 | INFO | Persistencia OK: guardados 3 clientes en 'base_datos.txt'
+2026-02-13 21:39:49.636285 | INFO | Clientes guardados en archivo TXT
+2026-02-13 21:39:49.636652 | INFO | Cliente creado: Max | max@rivas.cl
+2026-02-13 21:40:04.785653 | INFO | Menú | Crear cliente
+2026-02-13 21:45:17.407058 | INFO | Persistencia OK: guardados 4 clientes en 'base_datos.txt'
+2026-02-13 21:45:17.407437 | INFO | Clientes guardados en archivo TXT
+2026-02-13 21:45:17.407800 | INFO | Cliente creado: Macarena | Maca@gallardo.cl
+2026-02-13 21:45:23.575182 | INFO | Menú | Listar clientes
+2026-02-13 21:48:31.206436 | WARNING | Menú | Opción inválida ingresada: 3
+2026-02-13 21:48:41.686591 | WARNING | Menú | Opción inválida ingresada: 4
+2026-02-13 21:48:44.111068 | INFO | Persistencia OK: guardados 4 clientes en 'base_datos.txt'
+2026-02-13 21:48:44.111441 | INFO | Clientes guardados en archivo TXT
+2026-02-13 21:48:44.111823 | INFO | Menú | Salir del sistema
+2026-02-13 22:03:20.119587 | INFO | Sistema GIC iniciado
+2026-02-13 22:03:20.121927 | INFO | Persistencia OK: cargados 4 clientes desde 'base_datos.txt'
+2026-02-13 22:03:20.122325 | INFO | Clientes cargados: 4
+2026-02-13 22:03:26.529839 | INFO | Menú | Listar clientes
+2026-02-13 22:03:29.310110 | INFO | Menú | Editar cliente
+2026-02-13 22:04:14.874180 | INFO | Cliente editado: Max Rivas | max@rivas.cl
+2026-02-13 22:04:21.995037 | INFO | Menú | Editar cliente
+2026-02-13 22:05:31.278132 | INFO | Cliente editado: Maria Soto | maria@gmail.com
+2026-02-13 22:05:37.604885 | INFO | Menú | Listar clientes
+2026-02-13 22:21:05.790805 | INFO | Persistencia OK: guardados 4 clientes en 'base_datos.txt'
+2026-02-13 22:21:05.791216 | INFO | Clientes guardados en archivo TXT
+2026-02-13 22:21:05.791582 | INFO | Menú | Salir del sistema
+2026-02-13 22:21:13.139833 | INFO | Sistema GIC iniciado
+2026-02-13 22:21:13.140661 | INFO | Persistencia OK: cargados 4 clientes desde 'base_datos.txt'
+2026-02-13 22:21:13.141000 | INFO | Clientes cargados: 4
+2026-02-13 22:21:18.952615 | INFO | Menú | Listar clientes
+2026-02-13 22:21:36.150297 | INFO | Menú | Crear cliente
+2026-02-13 22:24:38.982931 | INFO | Persistencia OK: guardados 5 clientes en 'base_datos.txt'
+2026-02-13 22:24:38.983362 | INFO | Clientes guardados en archivo TXT
+2026-02-13 22:24:38.983723 | INFO | Cliente creado: Sergio | Sergio@Rivera.cl
+2026-02-13 22:24:46.615685 | INFO | Menú | Listar clientes
+2026-02-13 22:34:22.801498 | INFO | Menú | Editar cliente
+2026-02-13 22:34:40.662885 | WARNING | Cliente no encontrado con ese nombre y email.
+2026-02-13 22:34:56.117172 | INFO | Menú | Editar cliente
+2026-02-13 22:34:57.827254 | WARNING | Cliente no encontrado con ese nombre y email.
+2026-02-13 22:35:29.083573 | INFO | Menú | Editar cliente
+2026-02-13 22:35:53.952214 | WARNING | Cliente no encontrado con ese nombre y email.
+2026-02-13 22:37:59.553989 | INFO | Menú | Crear cliente
+2026-02-13 22:38:43.688264 | WARNING | Fallo al crear cliente: Nombre obligatorio.

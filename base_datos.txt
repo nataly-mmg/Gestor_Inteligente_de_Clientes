@@ -1,2 +1,5 @@
-ClienteRegular|Maria|Maria|maria@gmail.com|909876789
+ClienteRegular|Maria|Soto|maria@gmail.com|909876789
 ClienteRegular|Sebastian|martinez|seba@gmail.com|980987432
+ClientePremium|Max|Rivas|14.232.983-2|max@rivas.cl|940394823|Pmo
+ClienteCorporativo|Macarena|Gallardo|Maca@gallardo.cl|4564322123|Servicios Generales|True|15.371.275-1
+ClienteCorporativo|Sergio|Rivera|Sergio@Rivera.cl|876589779|Telefonia spa|Castro|9.257.132-7

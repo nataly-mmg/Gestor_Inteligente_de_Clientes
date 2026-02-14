@@ -139,6 +139,10 @@ class ClientePremium(Cliente):
         value = str(value).strip()
         if not value:
             raise DatoInvalidoError("El RUT es obligatorio para clientes Premium.")
+        
+        if not Validador.validar_rut(value):
+            raise DatoInvalidoError("El RUT ingresado no es válido.")
+        
         self.__rut = value
 
     # =========================
@@ -211,7 +215,14 @@ class ClienteCorporativo(Cliente):
 
     @direccion.setter
     def direccion(self, value):
-        self._direccion = Validador.validar_campo_no_vacio(value)
+        value = str(value).strip()
+
+        if not Validador.validar_campo_no_vacio(value):
+            raise DatoInvalidoError("La dirección no puede estar vacío.")
+        
+        self._direccion = value
+    
+
 
     def obtener_descuento(self):
         return 0.30

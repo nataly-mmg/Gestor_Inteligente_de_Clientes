@@ -23,7 +23,7 @@ class GestorClientes:
     @property
     def clientes(self):
         return self._clientes
-
+       
     # -------------------------
     # Persistencia
     # -------------------------
@@ -35,7 +35,17 @@ class GestorClientes:
         guardar_clientes_txt(self._clientes, self._archivo_txt)
         self._log.info("Clientes guardados en archivo TXT")
 
+    # -------------------------
+    # Búsqueda / duplicados
+    # -------------------------
+    def buscar_por_nombre_email(self, nombre, email):
+        nombre = nombre.strip().lower()
+        email = email.strip().lower()
 
+        for c in self.clientes:  
+            if c.nombre.lower() == nombre and c.email.lower() == email:
+                return c
+        return None
 
     def es_duplicado(self, nuevo_cliente):
         # usa __eq__ 
@@ -43,7 +53,7 @@ class GestorClientes:
 
 
     # -------------------------
-    # Alta (agregar) - con persistencia + logs
+    # Agregar - con persistencia + logs
     # -------------------------
     def agregar_cliente(self, nuevo_cliente):
         if nuevo_cliente is None:
@@ -62,7 +72,7 @@ class GestorClientes:
 
 
 
- # -------------------------
+    # -------------------------
     # CREACIÓN INTERACTIVA 
     # -------------------------
     def crear_cliente_interactivo(self):
@@ -79,7 +89,7 @@ class GestorClientes:
             return None
 
         try:
-            # Datos base (siempre)
+            # Datos base 
             nombre = input("Nombre: ").strip()
             apellido = input("Apellido: ").strip()
             email = input("Email: ").strip()
